@@ -20,6 +20,8 @@ RUN apk upgrade --no-cache \
     && rm -rf shadowsocksr-$SSR_VERSION \
     rm -rf /var/cache/apk/*
 
+EXPOSE 80 1081
+
 CMD sslocal -s ${SERVER_ADDR:-0.0.0.0} \
             -p ${SERVER_PORT:-80\
             -k ${PASSWORD:-$(hostname)} \
