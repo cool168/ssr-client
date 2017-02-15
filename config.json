@@ -1,7 +1,9 @@
 {
+    "server" : "",
     "server_port" : 80,
     "local_address" : "127.0.0.1",
     "local_port" : 1081,
+    "password" : "",
     "timeout" : 300,
     "method" : "rc4-md5",
     "protocol" : "origin",

@@ -16,6 +16,6 @@ RUN apk upgrade --no-cache \
     && rm -rf shadowsocksr-$SSR_VERSION \
     rm -rf /var/cache/apk/*
 
-ADD config.json /etc/config.json
+ADD entrypoint.sh /entrypoint.sh
 
-CMD sslocal -c /etc/config.json
+ENTRYPOINT ["/entrypoint.sh"]
