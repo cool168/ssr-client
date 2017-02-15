@@ -11,7 +11,7 @@ RUN apk upgrade --no-cache \
     && apk add --no-cache bash tzdata python py-setuptools wget libsodium \
     && wget --no-check-certificate https://github.com/shadowsocksr/shadowsocksr/archive/$SSR_VERSION.tar.gz \
     && tar -zxvf $SSR_VERSION.tar.gz \
-    && (cd /root/shadowsocks-$SS_VERSION && python setup.py install) \
+    && (cd /root/shadowsocksr-$SSR_VERSION && python setup.py install)  \
     && apk del wget \
     && rm -f $SSR_VERSION.tar.gz \
     && rm -rf shadowsocksr-$SSR_VERSION \
