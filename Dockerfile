@@ -20,8 +20,12 @@ RUN apk upgrade --no-cache \
     && rm -rf shadowsocksr-$SSR_VERSION \
     rm -rf /var/cache/apk/*
 
-ADD entrypoint.sh /entrypoint.sh
-
-ADD config.json /etc/config.json
-
-ENTRYPOINT ["/root/entrypoint.sh"]
+CMD sslocal -s ${SERVER_ADDR:-0.0.0.0} \
+                    -p ${SERVER_PORT:-80\
+                    -k ${PASSWORD:-$(hostname)} \
+                    -m ${METHOD:-chacha20} \
+	       -O ${PROTOCOL:-origin} \
+                    -o ${OBFS:-plain} \
+                    -t ${TIMEOUT:-300} \
+                    -d ${DNS_ADDR:-8.8.8.8} \
+                    --fast-open -u -A
