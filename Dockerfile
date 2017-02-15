@@ -5,7 +5,6 @@ MAINTAINER shadou <shadou@erhuo.two>
 WORKDIR /root
 
 ENV SSR_VERSION 3.0.1
-ENV LOCAL_PORT 1081
 
 RUN apk upgrade --no-cache \
     && apk add --no-cache bash tzdata python py-setuptools wget libsodium \
@@ -16,8 +15,6 @@ RUN apk upgrade --no-cache \
     && rm -f $SSR_VERSION.tar.gz \
     && rm -rf shadowsocksr-$SSR_VERSION \
     rm -rf /var/cache/apk/*
-
-EXPOSE $LOCAL_PORT
 
 ADD config.json /etc/config.json
 
