@@ -23,6 +23,8 @@ CMD sslocal -s ${SERVER_ADDR:-0.0.0.0} \
             -l ${LOCAL_PORT:-1081} \
             -m ${METHOD:-chacha20-ietf} \
 	        -O ${PROTOCOL:-auth_aes128_sha1} \
+            -G ${PROTOCOL_PARAM:-} \
             -o ${OBFS:-tls1.2_ticket_auth} \
+            -g ${OBFS_PARAM:-www.189.cn} \
             -t ${TIMEOUT:-120} \
             --fast-open
